@@ -1,0 +1,5 @@
+.random__movies-list {
+  display: flex;
+  width: 60vw;
+  overflow: scroll;
+}
