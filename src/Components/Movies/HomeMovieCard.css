@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-inline: 0.7rem;
+  margin-right: 0.7rem;
 }
 
 .movie-card img {
@@ -10,15 +10,18 @@
   width: 15vw;
   min-height: 10rem;
   min-width: 10rem;
-}
-
-.movie-card span {
-  font-size: small;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+  overflow: hidden;
 }
 
 .movie__card-detail {
-  margin-top: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
+}
+
+.movie__card-detail h6 {
+  margin: 0.3rem 0;
 }

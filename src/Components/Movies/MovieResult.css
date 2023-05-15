@@ -1,0 +1,31 @@
+.movie-result {
+  color: white;
+  font-size: calc(10px);
+  width: 100%;
+  border-bottom: 0.3px rgb(6, 6, 7) solid;
+  display: flex;
+  align-items: center;
+  background-color: hsla(232, 65%, 16%, 0.16);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(185, 179, 179, 0.3) 0px 8px 16px -8px;
+  text-decoration: none;
+}
+
+.movie-result:hover {
+  background-color: #1876d1;
+  cursor: pointer;
+}
+
+.movie-result h3 {
+  font-size: calc(8px + 0.2vw);
+  margin-right: 4px;
+}
+
+.result-image {
+  margin-right: 1rem;
+  max-height: 9em;
+  max-width: 10em;
+  width: 8em;
+  height: 8em;
+  min-width: 8em;
+}

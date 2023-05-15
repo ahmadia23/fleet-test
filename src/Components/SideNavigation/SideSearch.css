@@ -1,0 +1,57 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  min-width: 10em;
+  height: 100%;
+  border-right: 0.1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #01011577 !important;
+  color: #ffd37b !important;
+}
+
+.sidebar h4 {
+  position: relative;
+  text-align: center;
+  top: 15vh;
+  margin-bottom: 1rem;
+}
+
+.sidebar input {
+  position: relative;
+  top: 15vh;
+}
+
+input::placeholder {
+  font-size: calc(8px + 0.6vw);
+}
+
+.back {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  min-width: 10em;
+  height: 100%;
+  border-right: 0.1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #121212 !important;
+  color: white !important;
+}
+
+.remove {
+  opacity: 0;
+}

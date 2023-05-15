@@ -1,37 +1,43 @@
-import { useEffect, useState } from "react";
-import Movie from "./Movie";
+import HomeMovieCard from "./HomeMovieCard";
 import "./RandomMovies.css";
+import { json, useLoaderData } from "react-router";
 
+const MOVIEDB_KEY = process.env.REACT_APP_API_KEY;
+
+//showcase a list of random movies fetched for homepage
 const RandomMovies = () => {
-  const [movieDiscovery, setMovieDiscovery] = useState([]);
+  const fetchedRandomMovies = useLoaderData().results;
 
-  useEffect(() => {
-    const fetchRandomMovies = async () => {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/discover/movie?api_key=e78e73fee299ae540fb717859644f524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
-      );
-
-      const data = await response.json();
-      setMovieDiscovery(data.results.slice(0, 5));
-      return data.results.slice(0, 5);
-    };
-    fetchRandomMovies();
-  }, []);
-  console.log(movieDiscovery);
   return (
     <div className="random__movies-list">
-      {movieDiscovery.map((movie) => {
-        return (
-          <Movie
-            title={movie.original_title}
-            image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
-            popularity={movie.popularity}
-            key={movie.id}
-          />
-        );
-      })}
+      {
+        //rendering each random movies in home cards
+        fetchedRandomMovies.map((movie) => {
+          return (
+            <HomeMovieCard
+              title={movie.original_title}
+              image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
+              popularity={movie.popularity}
+              key={movie.id}
+            />
+          );
+        })
+      }
     </div>
   );
 };
 
 export default RandomMovies;
+
+//fetch popular random movies for homepage
+export const fetchRandomMovies = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${MOVIEDB_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+  );
+
+  if (!response.ok) {
+    return json({ message: "could not fetch random movies" }, { status: 500 });
+  } else {
+    return response;
+  }
+};

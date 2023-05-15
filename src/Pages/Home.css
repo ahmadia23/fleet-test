@@ -22,13 +22,15 @@
 }
 
 .Home-features {
-  top: 25vh;
+  top: 9vh;
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: calc(25vh) 0;
+  margin: 25vh 2rem;
 }
 
-.Home-features h3 {
-  margin: 8px;
+@media (max-width: 1000px) {
+  .Home-content {
+    margin-inline: 10%;
+  }
 }
