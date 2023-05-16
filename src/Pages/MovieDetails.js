@@ -7,7 +7,9 @@ import SideSearch from "../Components/SideNavigation/SideSearch";
 
 const MOVIEDB_KEY = process.env.REACT_APP_API_KEY;
 
+//movie details page
 const MovieDetails = ({ id }) => {
+  //result data of movie fetched
   const movieData = useLoaderData();
 
   const genres = movieData.genres.map((genre) => {
@@ -61,6 +63,7 @@ const MovieDetails = ({ id }) => {
 
 export default MovieDetails;
 
+//fetch a single movie with its id and load all data in that component
 export const loadMovieDetails = async ({ request, params }) => {
   const movie_id = parseInt(params.movie_id);
   const response = await fetch(

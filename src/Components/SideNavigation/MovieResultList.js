@@ -18,7 +18,6 @@ const MovieResultList = ({ searchInput }) => {
 
       const ResponseData = await response.json();
       setMovies(ResponseData.results);
-      console.log(movies);
     };
     fetchMovies(searchInput);
   }, [searchInput]);

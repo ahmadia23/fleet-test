@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Drawer, Button } from "@mui/material";
 import "./SideSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import MoviesList from "./MovieResultList";
 
 const SideSearch = () => {
@@ -11,8 +11,13 @@ const SideSearch = () => {
   const [windowSizeLarge, setWindowSizeLarge] = useState(
     window.innerWidth > 1000
   );
-  //handle user input
+  //state for user input
   const [searchInput, setSearchInput] = useState("");
+
+  //handling search input
+  const movieSearchHandler = (event) => {
+    setSearchInput(event.target.value);
+  };
 
   //listen to the screen size and updating windows size state to toggle side menu
   window.addEventListener("resize", () => {
@@ -26,20 +31,20 @@ const SideSearch = () => {
     setSideBar(open);
   };
 
-  const movieSearchHandler = (event) => {
-    setSearchInput(event.target.value);
-  };
-
   const sidebar = (
     <div className="sidebar">
       {!windowSizeLarge && <Button onClick={toggleDrawer(false)}>Back</Button>}
       <h4>Find a Movie</h4>
+      <FontAwesomeIcon
+        icon={faMagnifyingGlass}
+        size="2x"
+        className="search-glass"
+      />
       <input
-        placeholder="Batman, Inception..."
+        placeholder="       Batman, Inception..."
         onChange={movieSearchHandler}
         type="text"
-        contenteditable
-        height="20px"
+        contentEditable
       />
       {<MoviesList searchInput={searchInput} />}
     </div>
@@ -47,28 +52,33 @@ const SideSearch = () => {
 
   return (
     <React.Fragment>
-      {!windowSizeLarge && (
-        <div className="toggle-menu">
-          <Button onClick={toggleDrawer(true)}>
-            <FontAwesomeIcon icon={faBars} size="2x" />
-          </Button>
-          <Drawer
-            anchor="left"
-            open={sideBarOpen}
-            onClose={toggleDrawer(false)}
-            style={{ color: "red" }}
-            classes={{
-              paper: "sidebar",
-              modal: "MuiDrawer-modal",
-              root: "MuiDrawer-root",
-            }}
-          >
-            {sidebar}
-          </Drawer>
-        </div>
-      )}
-
-      {windowSizeLarge && sidebar}
+      {
+        // rendering a toggle menu sidebar when screen size reduce
+        !windowSizeLarge && (
+          <div className="toggle-menu">
+            <Button onClick={toggleDrawer(true)}>
+              <FontAwesomeIcon icon={faBars} size="2x" />
+            </Button>
+            <Drawer
+              anchor="left"
+              open={sideBarOpen}
+              onClose={toggleDrawer(false)}
+              style={{ color: "red" }}
+              classes={{
+                paper: "sidebar",
+                modal: "MuiDrawer-modal",
+                root: "MuiDrawer-root",
+              }}
+            >
+              {sidebar}
+            </Drawer>
+          </div>
+        )
+      }
+      {
+        //permanent sidebar when screen is large
+        windowSizeLarge && sidebar
+      }
     </React.Fragment>
   );
 };

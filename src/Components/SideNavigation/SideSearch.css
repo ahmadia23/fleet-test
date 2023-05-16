@@ -24,6 +24,9 @@
 .sidebar input {
   position: relative;
   top: 15vh;
+  height: 1.2rem;
+  padding: 0.3rem;
+  text-align: center;
 }
 
 input::placeholder {
@@ -54,4 +57,13 @@ input::placeholder {
 
 .remove {
   opacity: 0;
+}
+
+.search-glass {
+  color: black;
+  position: relative;
+  top: 19.1vh;
+  left: -3em;
+  z-index: 1;
+  font-size: 20px;
 }

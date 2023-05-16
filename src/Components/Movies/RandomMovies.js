@@ -1,28 +1,66 @@
 import HomeMovieCard from "./HomeMovieCard";
+import "react-horizontal-scrolling-menu";
+import { useScroll } from "../Hook/useScroll";
+import { useRef } from "react";
+
 import "./RandomMovies.css";
 import { json, useLoaderData } from "react-router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const MOVIEDB_KEY = process.env.REACT_APP_API_KEY;
 
 //showcase a list of random movies fetched for homepage
 const RandomMovies = () => {
+  //Select all the movie DOM elements
+  const movieListRef = useRef(null);
+
+  //movies fetched from the MOVIEDB
   const fetchedRandomMovies = useLoaderData().results;
 
+  //custom hook to handle horizontal scrolling
+  const {
+    isLeftArrowDisabled,
+    isRightArrowDisabled,
+    handleLeftArrowClick,
+    handleRightArrowClick,
+  } = useScroll(fetchedRandomMovies, movieListRef);
+
+  const randomMoviesComponent = fetchedRandomMovies.map((movie) => {
+    return (
+      <HomeMovieCard
+        title={movie.original_title}
+        image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
+        popularity={movie.popularity}
+        key={movie.id}
+        itemId={movie.id}
+      />
+    );
+  });
+
   return (
-    <div className="random__movies-list">
-      {
-        //rendering each random movies in home cards
-        fetchedRandomMovies.map((movie) => {
-          return (
-            <HomeMovieCard
-              title={movie.original_title}
-              image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
-              popularity={movie.popularity}
-              key={movie.id}
-            />
-          );
-        })
-      }
+    <div className="random__movies-container">
+      <div className="random__movies-list snaps-inline" ref={movieListRef}>
+        {randomMoviesComponent}
+      </div>
+      <button
+        className={
+          isLeftArrowDisabled ? "arrow left-arrow disabled" : "arrow left-arrow"
+        }
+        onClick={handleLeftArrowClick}
+      >
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </button>
+      <button
+        className={
+          isRightArrowDisabled
+            ? "arrow right-arrow disabled"
+            : "arrow right-arrow"
+        }
+        onClick={handleRightArrowClick}
+      >
+        <FontAwesomeIcon icon={faArrowRight} />
+      </button>
     </div>
   );
 };

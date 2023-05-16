@@ -1,6 +1,80 @@
+.random__movies-container {
+  width: 100%;
+  overflow: hidden;
+}
+
 .random__movies-list {
+  --_spacer: 1rem;
   display: flex;
   width: 60vw;
-  overflow: scroll;
+  overflow-x: auto;
   position: relative;
+  overscroll-behavior-inline: contain;
+  padding: 0 var(--_spacer) var(--_spacer);
+  scroll-behavior: smooth;
+}
+
+.random__movies-list::-webkit-scrollbar {
+  display: none;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+  scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrow {
+  position: absolute;
+  top: 38%;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: -4.2vw;
+}
+
+.right-arrow {
+  right: -4.2vw;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media ((max-width: 1000px)) {
+  .left-arrow {
+    left: -10vw;
+  }
+
+  .right-arrow {
+    right: -10vw;
+  }
+}
+
+@media ((max-width: 600px)) {
+  .arrow {
+    font-size: 2em;
+  }
+
+  .left-arrow {
+    left: -13vw;
+  }
+
+  .right-arrow {
+    right: -13vw;
+  }
 }

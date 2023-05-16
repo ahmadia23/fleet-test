@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MovieDetails, { loadMovieDetails } from "./Pages/MovieDetails";
 import { fetchRandomMovies } from "./Components/Movies/RandomMovies";
 
+// two nodes routing
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: ":movie_id",
+        path: "movie/:movie_id",
         loader: loadMovieDetails,
         element: <MovieDetails />,
       },

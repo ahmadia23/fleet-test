@@ -9,7 +9,7 @@ const Home = () => {
       <SideSearch />
       <div className="Home-content">
         <div className="Home-header">
-          <h1>Welcome to Movie Future </h1>
+          <h1 className="underline">Welcome to Movie Future </h1>
           <span>
             You can browse your favorite movies and discover new ones !
           </span>
