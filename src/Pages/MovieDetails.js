@@ -18,11 +18,13 @@ const MovieDetails = ({ id }) => {
 
   return (
     <Fragment>
-      <SideSearch />
-      <div className="movie-details">
+      <div className="top-page">
+        <SideSearch />
         <Link to={"/"} className="home-button">
           Home
         </Link>
+      </div>
+      <div className="movie-details">
         <div className="movie-showcase">
           <div className="movie-title">
             <h2>{movieData.title}</h2>

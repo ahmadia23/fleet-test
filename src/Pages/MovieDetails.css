@@ -1,7 +1,20 @@
+.top-page {
+  display: flex;
+  justify-content: space-between;
+}
+
 .home-button {
   color: #1876d1;
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin: 1rem;
+  transition: 0.4s ease;
+  font-size: calc(1.5vw);
+  border: solid;
+  padding: 0.3vw;
+}
+
+.home-button:hover {
+  color: #cee0f3;
 }
 
 .movie-resume {
@@ -114,8 +127,7 @@
   }
 
   .home-button {
-    left: 20em;
-    top: 0em;
+    font-size: calc(1.8vh) !important;
   }
 
   .scene-image {
@@ -135,5 +147,12 @@
   .home-button {
     left: 20em;
     top: 2em;
+    font-size: calc(2vw);
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-button {
+    align-self: center;
   }
 }

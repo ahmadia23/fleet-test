@@ -35,13 +35,8 @@ const SideSearch = () => {
     <div className="sidebar">
       {!windowSizeLarge && <Button onClick={toggleDrawer(false)}>Back</Button>}
       <h4>Find a Movie</h4>
-      <FontAwesomeIcon
-        icon={faMagnifyingGlass}
-        size="2x"
-        className="search-glass"
-      />
       <input
-        placeholder="       Batman, Inception..."
+        placeholder="Batman, Inception..."
         onChange={movieSearchHandler}
         type="text"
         contentEditable
