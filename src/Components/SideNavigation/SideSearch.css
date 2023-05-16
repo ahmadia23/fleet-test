@@ -21,12 +21,18 @@
   margin-bottom: 1rem;
 }
 
-.sidebar input {
+.sidebar-input {
+  color: white;
   position: relative;
   top: 15vh;
   height: 1.2rem;
   padding: 0.3vw;
   max-width: 80%;
+}
+
+.sidebar-input::after {
+  color: white;
+  background-color: white;
 }
 
 input::placeholder {

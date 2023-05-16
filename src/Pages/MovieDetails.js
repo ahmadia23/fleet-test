@@ -7,7 +7,6 @@ import SideSearch from "../Components/SideNavigation/SideSearch";
 
 const MOVIEDB_KEY = process.env.REACT_APP_API_KEY;
 
-//movie details page
 const MovieDetails = ({ id }) => {
   //result data of movie fetched
   const movieData = useLoaderData();
@@ -28,7 +27,9 @@ const MovieDetails = ({ id }) => {
         <div className="movie-showcase">
           <div className="movie-title">
             <h2>{movieData.title}</h2>
-            <span className="original-title">{movieData.original_title}</span>
+            <span className="original-title">
+              Original Title: {movieData.original_title}
+            </span>
             <span>Year: {movieData.release_date}</span>
           </div>
           <div className="posters">
@@ -42,7 +43,7 @@ const MovieDetails = ({ id }) => {
         </div>
         <div className="movie-overview">
           <div className="genres">{genres}</div>
-          <h3>Official Photo</h3>
+          <h3>Scene Capture</h3>
           <div className="credit">
             <img
               className="scene-image"

@@ -1,8 +1,3 @@
-.top-page {
-  display: flex;
-  justify-content: space-between;
-}
-
 .home-button {
   color: #1876d1;
   text-decoration: none;
@@ -24,9 +19,8 @@
 .movie-details {
   position: relative;
   left: 16vw;
-  margin: 6em 2em;
-  width: 60vw;
-  font-size: calc(10px + 0.6vw);
+  margin: 4em 2em;
+  width: 80%;
 }
 
 .poster-image {
@@ -66,7 +60,7 @@
 .scene-image {
   min-width: 25em;
   min-height: 10em;
-  width: 50vw;
+  width: 75%;
   height: 50vh;
   max-height: 30em;
   border-radius: 4px;
@@ -80,12 +74,14 @@
 
 .movie-genre {
   background-color: #2166ab;
-  padding: calc(2px + 1vw);
+  padding: 1.2rem;
+  height: 1.2rem;
   border-radius: 4px;
   font-style: bold;
   margin-right: 1rem;
   margin-top: 0.3rem;
   text-align: center;
+  align-self: center;
   width: 8vw;
   min-width: 6em;
   min-width: 4em;
@@ -113,11 +109,14 @@
 }
 
 @media (max-width: 600px) {
+  .top-page {
+    display: flex;
+    justify-content: space-between;
+  }
   .movie-details {
-    left: calc(10vw);
+    left: calc(6vw) !important;
     position: relative;
     margin: 6em 2em;
-    width: 45vw;
     font-size: calc(8px);
   }
 
@@ -131,28 +130,31 @@
   }
 
   .scene-image {
-    width: 28em;
+    width: 100% !important;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
+  .top-page {
+    display: flex;
+    justify-content: space-between;
+  }
   .movie-details {
     left: calc(12vw);
     position: relative;
     margin: 6em 2em;
-    width: 45vw;
     font-size: calc(10px + 0.2vw);
   }
 
   .home-button {
-    left: 20em;
-    top: 2em;
     font-size: calc(2vw);
   }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 951px) {
   .home-button {
-    align-self: center;
+    position: relative;
+    left: 90%;
+    top: 2em;
   }
 }

@@ -4,10 +4,17 @@
   align-items: center;
   margin-right: 0.7rem;
   gap: var(--_spacer);
+  text-decoration: none;
+  color: white;
+}
+.movie-card img:hover {
+  background-color: rgba(255, 255, 255, 0.656);
+  padding: 0.1rem;
 }
 
 .movie-card img {
-  height: 20vh;
+  transition: 0.7s ease;
+  height: 31vh;
   width: 15vw;
   min-height: 10rem;
   min-width: 10rem;
@@ -25,4 +32,15 @@
 
 .movie__card-detail h6 {
   margin: 0.3rem 0;
+}
+
+@media (max-width: 1000px) {
+  .movie-card img {
+    width: 26vw !important;
+  }
+}
+@media (max-width: 600px) {
+  .movie-card img {
+    width: 28vw !important;
+  }
 }
