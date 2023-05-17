@@ -52,7 +52,7 @@ If you encounter any issues during installation, please check the project's READ
 
 ### Search
 
-![Image](public/research.png)
+![Image](public/browse.png)
 
 ### Library
 
