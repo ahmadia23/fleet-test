@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Getting Started with pickme-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App], it's a simple and user-friendly interface that allows you to search for through movie database API, find your favorites movies and discover new ones.
 
-## Available Scripts
+# Prerequisites
 
-In the project directory, you can run:
+Node.js version 12 or higher installed on your machine
+A MOVIE DB API key. You can obtain one by signing up for an account at Create an account on https://www.themoviedb.org/
 
-### `npm start`
+# Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone the project from GitHub by running the following command in your terminal:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
+git clone https://github.com/ahmadia23/fleet-test.git
 
-### `npm test`
+### 2. Navigate to the project directory by running the following command:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
+cd fleet-test
 
-### `npm run build`
+### 3. Install the project dependencies by running the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. Open the project files:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
+code .
 
-### `npm run eject`
+### 5. Create a .env file in the root directory of the project, and add the following line, replacing your-api-key with your MOVIE DB API key:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
+REACT_APP_GIPHY_API_KEY=your-api-key
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 6. Start the project by running the following command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br>
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 7. Open your web browser and navigate to http://localhost:3000 to view the project.
 
-## Learn More
+Congratulations! You have successfully installed the React project on your machine.
+If you encounter any issues during installation, please check the project's README file or reach out to the me for assistance.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Project Preview
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Home
 
-### Code Splitting
+![Image](public/home-full.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Search
 
-### Analyzing the Bundle Size
+![Image](public/movie-detail.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Library
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Image](public/research.png)
 
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
