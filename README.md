@@ -1,6 +1,6 @@
-# Getting Started with pickme-test
+# Getting Started with fleet-test
 
-This project was bootstrapped with [Create React App], it's a simple and user-friendly interface that allows you to search for through movie database API, find your favorites movies and discover new ones.
+This project was bootstrapped with [Create React App], it's a simple and user-friendly interface that allows you to search through a movie database API, find your favorites movies and discover new ones.
 
 # Prerequisites
 
