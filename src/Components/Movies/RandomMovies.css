@@ -18,9 +18,9 @@
   display: none;
 }
 
-/* .snaps-inline {
+.snaps-inline {
   scroll-snap-type: inline mandatory;
-} */
+}
 
 .snaps-inline > * {
   scroll-snap-align: start;

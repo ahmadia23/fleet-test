@@ -14,8 +14,8 @@
 
 .movie-card img {
   transition: 0.7s ease;
-  height: 31vh;
-  width: 15vw;
+  height: 33vh;
+  width: 14rem;
   min-height: 10rem;
   min-width: 10rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
@@ -32,15 +32,4 @@
 
 .movie__card-detail h6 {
   margin: 0.3rem 0;
-}
-
-@media (max-width: 1000px) {
-  .movie-card img {
-    width: 26vw !important;
-  }
-}
-@media (max-width: 600px) {
-  .movie-card img {
-    width: 28vw !important;
-  }
 }
