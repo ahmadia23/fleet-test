@@ -52,11 +52,11 @@ If you encounter any issues during installation, please check the project's READ
 
 ### Search
 
-![Image](public/movie-detail.png)
+![Image](public/research.png)
 
 ### Library
 
-![Image](public/research.png)
+![Image](public/movie-detail.png)
 
 ### Deployment
 

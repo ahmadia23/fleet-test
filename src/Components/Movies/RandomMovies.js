@@ -1,12 +1,9 @@
-import HomeMovieCard from "./HomeMovieCard";
-import "react-horizontal-scrolling-menu";
-import { useScroll } from "../Hook/useScroll";
 import { useRef } from "react";
-
-import "./RandomMovies.css";
 import { json, useLoaderData } from "react-router";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import HomeMovieCard from "./HomeMovieCard";
+import { useScroll } from "../Hook/useScroll";
+import ArrowButtons from "../UI/ArrowButtons";
+import "./RandomMovies.css";
 
 const MOVIEDB_KEY = process.env.REACT_APP_API_KEY;
 
@@ -43,24 +40,16 @@ const RandomMovies = () => {
       <div className="random__movies-list snaps-inline" ref={movieListRef}>
         {randomMoviesComponent}
       </div>
-      <button
-        className={
-          isLeftArrowDisabled ? "arrow left-arrow disabled" : "arrow left-arrow"
-        }
+      <ArrowButtons
+        arrowSide={"left"}
+        isLeftArrowDisabled={isLeftArrowDisabled}
         onClick={handleLeftArrowClick}
-      >
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </button>
-      <button
-        className={
-          isRightArrowDisabled
-            ? "arrow right-arrow disabled"
-            : "arrow right-arrow"
-        }
+      ></ArrowButtons>
+      <ArrowButtons
+        arrowSide={"right"}
+        isRightArrowDisabled={isRightArrowDisabled}
         onClick={handleRightArrowClick}
-      >
-        <FontAwesomeIcon icon={faArrowRight} />
-      </button>
+      ></ArrowButtons>
     </div>
   );
 };
